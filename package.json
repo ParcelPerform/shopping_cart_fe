@@ -1,0 +1,12 @@
+{
+  "name": "fe-demo-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@git.parcelperform.com:tri/fe-demo-web.git",
+  "author": "Tri Truong <tri.itvn@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
+}
