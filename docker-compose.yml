@@ -1,0 +1,7 @@
+fe_demo_web:
+  image: fe-demo-web:latest
+  ports:
+    - "9100:9100"
+  # volumes:
+    # only mount for FE to develop
+    # - ./logs:/srv/logs

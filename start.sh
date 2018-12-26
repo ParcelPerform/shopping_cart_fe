@@ -1,1 +1,2 @@
-nodemon server/index
+#!/bin/sh
+node server/index
