@@ -29,6 +29,5 @@ const initSocketServer = (httpServer) => {
 }
 
 module.exports = {
-  initSocketServer,
-  getSocketServer: () => socketServer
+  initSocketServer
 }
