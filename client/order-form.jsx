@@ -17,17 +17,19 @@ class OrderForm extends React.Component {
       <div className="container">
         <h3 className="mt-3 text-center">ORDER FORM</h3>
         <div className="mt-3 row">
-          <div className="col-md-7 font-weight-bold">Item 1</div>
+          <div className="col-md-7 font-weight-bold">Item Name</div>
           <div className="col-md-5 font-weight-bold">Quantity</div>
         </div>
         
         <div id="orderForm" className="mt-3">
           <fieldset disabled={this.state.submitting}>
             {
-              _.map(this.items, (item, index) => <OrderItem key={index} itemModel={ item } />)
+              this.items.map(
+                (item, index) => <OrderItem key={index} itemModel={ item } />
+              )
             }
             <button onClick={ this.onOrder.bind(this) } className="btn btn-primary btn-lg btn-block">
-              { this.state.submitting ? 'Loading...' : 'Order' }
+              { this.state.submitting ? 'Submitting...' : 'Order' }
             </button>
           </fieldset>
         </div>
@@ -41,14 +43,5 @@ class OrderForm extends React.Component {
     })
 
     // TODO: Call API
-    console.log(this.items)
   }
 }
-
-ReactDOM.render(
-  <OrderForm />,
-  document.getElementById('root')
-);
-
-
-
