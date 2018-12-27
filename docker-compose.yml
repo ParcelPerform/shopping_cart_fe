@@ -1,8 +1,0 @@
-shopping_cart_fe:
-  image: shopping_cart_fe:latest
-  ports:
-    - "9100:9100"
-  # Uncomment here to dev
-  # volumes:
-  #   - ./client:/srv/fe-demo-web/client
-  #   - ./server:/srv/fe-demo-web/server
