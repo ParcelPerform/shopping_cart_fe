@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build --tag fe-demo-web --file ./Dockerfile .
+docker build --tag shopping_cart_fe --file ./Dockerfile .
