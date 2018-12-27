@@ -5,3 +5,4 @@ shopping_cart_fe:
   # Uncomment here to dev
   # volumes:
   #   - ./client:/srv/fe-demo-web/client
+  #   - ./server:/srv/fe-demo-web/server
