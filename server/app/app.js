@@ -8,9 +8,9 @@ let app = express()
 
 app.use(express.static(APP_CONSTANTS.CLIENT_PATH))
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.resolve(APP_CONSTANTS.CLIENT_PATH, 'index.html'))
-// })
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(APP_CONSTANTS.CLIENT_PATH, 'index.html'))
+})
 
 module.exports = {
   app
