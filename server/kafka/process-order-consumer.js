@@ -3,11 +3,12 @@ let kafka = require('kafka-node')
 
 class KafkaConsumer {
   init() {
-    // TODO: connect to kafka server
+    // TODO: initialize kafkaConsumer
+    // by using kafka.ConsumerGroup API
   }
 
   onConsume(fnCallback) {
-    // TODO: implement event handler
+    // TODO: execute fnCallback with consumed message
     setTimeout(() => fnCallback({foo: 'bar'}), 5000)
   }
 }
