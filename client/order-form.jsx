@@ -48,10 +48,9 @@ class OrderForm extends React.Component {
     })
 
     axios
-      // .post('http://localhost:8080/create-order/', {
-      //   items: this.items
-      // })
-      .get('https://baconipsum.com/api/?type=all-meat&paras=3&start-with-lorem=1&format=html')
+      .post('http://localhost:8080/create-order/', {
+        items: this.items
+      })
       .then(resp => {
         console.log(resp.data)
 
