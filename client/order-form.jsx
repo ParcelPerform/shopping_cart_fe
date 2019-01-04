@@ -13,7 +13,12 @@ class OrderForm extends React.Component {
   }
 
   render() {
-    return (
+    return this.state.submitted ? (
+      <div className="container">
+        <h3 className="mt-3 text-center">YOUR ORDER SUBMITTED !</h3>
+        <div className="mt-3 text-center">We are processing your order.</div>
+      </div>
+    ) : (
       <div className="container">
         <h3 className="mt-3 text-center">ORDER FORM</h3>
         <div className="mt-3 row">
@@ -42,6 +47,17 @@ class OrderForm extends React.Component {
       submitting: true
     })
 
-    // TODO: Call API
+    axios
+      // .post('http://localhost:8080/create-order/', {
+      //   items: this.items
+      // })
+      .get('https://baconipsum.com/api/?type=all-meat&paras=3&start-with-lorem=1&format=html')
+      .then(resp => {
+        console.log(resp.data)
+
+        this.setState({
+          submitted: true
+        })
+      })
   }
 }

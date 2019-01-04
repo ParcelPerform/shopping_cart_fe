@@ -1,15 +1,29 @@
 // https://github.com/SOHU-Co/kafka-node#readme
 let kafka = require('kafka-node')
 
+const TOPIC_NAME = 'order_shipped'
+
 class KafkaConsumer {
   init() {
-    // TODO: initialize kafkaConsumer
-    // by using kafka.ConsumerGroup API
+    this.consumer = new kafka.ConsumerGroup({
+      kafkaHost: 'kafka:9092',
+      groupId: 'fe-process-order-consumer',
+      protocol: ['roundrobin'],
+    }, TOPIC_NAME);
+
+    this.consumer.on('error', err => {
+      console.log("error!!")
+      console.log(err)
+    })
   }
 
   onConsume(fnCallback) {
-    // TODO: execute fnCallback with consumed message
-    setTimeout(() => fnCallback({foo: 'bar'}), 5000)
+    console.log("regsiterred!")
+
+    this.consumer.on('message', message => {
+      console.log("on message")
+      fnCallback(message)
+    })
   }
 }
 

@@ -11,7 +11,9 @@ const initSocketServer = (httpServer) => {
   socketServer = new SocketIoServer(httpServer)
 
   processOrderConsumer.onConsume(kafkaMessage => {
-    socketServer.emit('orderProcessed', kafkaMessage)
+    socketServer.emit('orderProcessed', {
+      data: kafkaMessage.value
+    })
   })
 }
 
